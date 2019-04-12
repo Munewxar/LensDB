@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="300.0" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="View.LensOverviewController">
+    <SplitPane dividerPositions="0.8467336683417085" layoutX="98.0" layoutY="59.0" orientation="VERTICAL"
+               prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="245.0">
+            <TableView fx:id="lensTableView" layoutX="75.0" prefHeight="195.0" prefWidth="598.0"
+                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="idColumn" editable="false" minWidth="0.0" prefWidth="36.0" text="Id"/>
+                    <TableColumn fx:id="lensNameColumn" editable="false" prefWidth="156.0" text="Name"/>
+                    <TableColumn fx:id="priceColumn" editable="false" prefWidth="156.0" text="Price"/>
+                    <TableColumn fx:id="focusDistanceColumn" editable="false" prefWidth="75.0" text="Focus"/>
+                    <TableColumn fx:id="suitableForCanonColumn" editable="false" prefWidth="75.0" text="Canon"/>
+                    <TableColumn fx:id="suitableForNikonColumn" editable="false" prefWidth="75.0" text="Nikon"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="44.0" prefWidth="598.0">
+            <HBox alignment="BOTTOM_RIGHT" layoutX="465.0" layoutY="15.0" spacing="10.0"
+                  AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+                <Button fx:id="addButton" layoutX="377.0" layoutY="3.0" mnemonicParsing="false"
+                        onAction="#handleNewLens" prefHeight="15.0" prefWidth="15.0"/>
+                <Button fx:id="deleteButton" layoutX="446.0" layoutY="1.0" mnemonicParsing="false"
+                        onAction="#handleDeleteLens" prefHeight="15.0" prefWidth="15.0"/>
+            </HBox>
+            <Hyperlink fx:id="hyperlink" layoutX="20.0" layoutY="16.0" onAction="#handleHyperlink" text="Developer"
+                       AnchorPane.leftAnchor="20.0"/>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>
